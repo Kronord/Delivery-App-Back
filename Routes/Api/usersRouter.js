@@ -5,11 +5,12 @@ const { User } = require("../../Models/usersModel");
 router.post("/user", async (req, res, next) => {
   try {
     const { name, email, phone, address, order } = req.body;
-    const oneUser = await User.findOne({ name });
+    const oneUser = await User.findOne({ email });
+    console.log(oneUser);
     if (oneUser) {
-      const newArr = oneUser.order.products.concat(order.products);
-      const newTotal = (oneUser.order.total += order.total);
-      await User.findByIdAndUpdate(oneUser._id, {order: {products: newArr, total: newTotal}});
+      const newArr = [...oneUser.order, ...order];
+      console.log(newArr);
+      await User.findByIdAndUpdate(oneUser._id, {order: newArr});
       return res.status(200).json({ message: "Successfull added" });
     }
     const user = new User({
