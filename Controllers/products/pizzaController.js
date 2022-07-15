@@ -1,8 +1,8 @@
-const {Product} = require('../Models/productsModel');
+const {PizzaHouse} = require('../../Models/pizzaHouseModel');
 
-const productController = async (req, res, next) => {
+const pizzaController = async (req, res, next) => {
     try {
-        const products = await Product.find();
+        const products = await PizzaHouse.find();
         if (!products) {
             return res.status(404).json({message: "Not found"});
         };
@@ -12,4 +12,4 @@ const productController = async (req, res, next) => {
     }
 };
 
-module.exports = {productController};
+module.exports = {pizzaController};

@@ -1,4 +1,4 @@
-const {Sushiya} = require('../Models/sushiyaModel');
+const {Sushiya} = require('../../Models/sushiyaModel');
 
 const sushiyaController = async (req, res, next) => {
     try {
