@@ -1,6 +1,6 @@
 const {Schema, model} = require("mongoose");
 
-const phoneSchema = Schema({
+const mcDonaldsSchema = Schema({
     title: {
         type: String,
         required: true,
@@ -19,6 +19,6 @@ const phoneSchema = Schema({
     },
 });
 
-const Phone = model("Phone", phoneSchema);
+const mcDonalds = model("mcDonalds", mcDonaldsSchema);
 
-module.exports = {Phone};
+module.exports = {mcDonalds};

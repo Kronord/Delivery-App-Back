@@ -1,8 +1,8 @@
-const {Phone} = require('../Models/phonesModel');
+const {mcDonalds} = require('../Models/mcDonaldsModel');
 
-const phoneController = async (req, res, next) => {
+const mcDonaldsController = async (req, res, next) => {
     try {
-        const products = await Phone.find();
+        const products = await mcDonalds.find();
         if (!products) {
             return res.status(404).json({message: "Not found"});
         };
@@ -12,4 +12,4 @@ const phoneController = async (req, res, next) => {
     }
 };
 
-module.exports = {phoneController};
+module.exports = {mcDonaldsController};
