@@ -19,6 +19,6 @@ const mcDonaldsSchema = Schema({
     },
 });
 
-const mcDonalds = model("mcDonalds", mcDonaldsSchema);
+const mcDonald = model("mcDonald", mcDonaldsSchema);
 
-module.exports = {mcDonalds};
+module.exports = {mcDonald};

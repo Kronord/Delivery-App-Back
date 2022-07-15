@@ -1,8 +1,8 @@
-const {mcDonalds} = require('../Models/mcDonaldsModel');
+const {mcDonald} = require('../Models/mcDonaldsModel');
 
 const mcDonaldsController = async (req, res, next) => {
     try {
-        const products = await mcDonalds.find();
+        const products = await mcDonald.find();
         if (!products) {
             return res.status(404).json({message: "Not found"});
         };
